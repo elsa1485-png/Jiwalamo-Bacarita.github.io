@@ -1,0 +1,354 @@
+/* RESET SEDERHANA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Ganti dengan font yang Anda inginkan */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%; /* Jika logo berbentuk bulat */
+}
+
+.brand-text h1 {
+    font-size: 1.2em;
+    line-height: 1;
+}
+.brand-text p {
+    font-size: 0.8em;
+    line-height: 1;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav ul li a {
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #ffd700; /* Warna kuning dari logo */
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+/* HERO SECTION (HOME) STYLING */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Gelapkan background */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    z-index: 3;
+    padding-top: 60px; /* Jarak dari navbar */
+}
+
+.theme-text {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.hero-content h2 {
+    font-family: 'Brush Script MT', cursive; /* Ganti dengan font yang mirip tulisan tangan */
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.by-text {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #5aa9e8; /* Biru muda */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #4a98d7;
+}
+
+/* ABOUT SECTION (TENTANG KAMI) STYLING */
+.about-section {
+    background-color: #1a4358; /* Warna biru gelap dari screenshot */
+    color: white;
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* 1. Kontainer Utama: Memastikan teks dan foto bisa berdampingan */
+.about-wrapper { /* Anggap ini adalah div yang membungkus about-content & team-photo-about */
+    display: flex; /* Mengaktifkan Flexbox */
+    justify-content: center; /* Memusatkan konten di tengah halaman */
+    align-items: flex-start; /* Meratakan item ke bagian atas kontainer */
+    gap: 30px; /* Memberi jarak horizontal antara teks dan foto */
+    max-width: 1200px; /* Lebar maksimum untuk konten (sesuaikan) */
+    margin: 0 auto; /* Memusatkan wrapper di tengah */
+    padding: 0 20px;
+}
+
+/* 2. Konten Teks: Pastikan rata kiri dan mengambil ruang yang lebih besar */
+.about-content {
+    /* Hapus 'max-width: 800px' dan 'margin: 0 auto' dari sini */
+    flex: 3; /* Teks mengambil 2/3 bagian dari ruang yang tersedia */
+    text-align: left; /* Teks RATA KIRI (sudah benar, tapi pastikan lagi) */
+    max-width: none; /* Nonaktifkan max-width agar flex bisa bekerja */
+    padding: 0; /* Hapus padding yang tidak diperlukan di sini */
+}
+
+/* 3. Foto: Pastikan berada di kanan dan mengambil ruang yang lebih kecil */
+.team-photo-about {
+   
+    flex: 3; /* Foto mengambil 1/3 bagian dari ruang yang tersedia */
+    width: 900%; /* Agar foto mengisi ruang flexnya */
+    max-width: 800px; /* Batasi lebar maksimum foto */
+    height: auto;
+    border-radius: 5px;
+    
+    /* Properti tambahan untuk tampilan */
+    align-self: flex-start; /* Pastikan foto sejajar di atas */
+}
+
+
+.btn-kembali {
+    background-color: #ccc;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    float: right;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-kembali:hover {
+    background-color: #fff;
+}
+
+/* STORY SECTION (TULISKAN CERITAMU) STYLING */
+.story-section {
+    background-color: white;
+    padding: 100px 0;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.story-section .section-title {
+    color: #333;
+    font-size: 3em;
+}
+
+.story-tagline {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.story-tagline-small {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+}
+
+.btn-contact {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: opacity 0.3s;
+}
+
+.btn-contact .icon {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.email {
+    background-color: #5aa9e8;
+    color: white;
+}
+
+.whatsapp {
+    background-color: #f7d56e; /* Kuning dari screenshot */
+    color: #333;
+}
+
+.instagram {
+    background-color: #5aa9e8;
+    color: white;
+}
+
+.btn-contact:hover {
+    opacity: 0.9;
+}
+
+.btn-submit {
+    background-color: #5aa9e8;
+    color: white;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #4a98d7;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+        position: static; /* Buat navbar tidak fixed di mobile */
+    }
+
+    .navbar nav ul {
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-media {
+        display: none; /* Sembunyikan handle media sosial di mobile */
+    }
+
+    .hero-content h2 {
+        font-size: 3em;
+    }
+    
+    .team-photo-about {
+        float: none;
+        margin: 20px auto;
+        display: block;
+        width: 100%;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+}
+ 
